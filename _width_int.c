@@ -2,8 +2,8 @@
 
 /**
  * print_width - A function that pads our print num function with
- * @c: char containing width 
- * @n: int 
+ * @c: char containing width
+ * @n: int
  * @counter: the number of bytes counter
  */
 void print_width(char c, int n, int *counter)

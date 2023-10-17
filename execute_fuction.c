@@ -1,4 +1,3 @@
-#include "main.h"
 
 /**
  * print_unsignedd - A function that prints unsigned
@@ -7,30 +6,27 @@
  */
 int print_unsignedd(unsigned int n)
 {
-    int count = 0;
-    int i = 0;
-    char n_arr[20];
+	int count = 0;
+	int i = 0;
+	char n_arr[20];
 
-    if (n == 0)
-    {
-        count += _putchar('0');
-        return count;
-    }
+	if (n == 0)
+	{
+		count += _putchar('0');
+		return (count);
+	}
+	while (n > 0)
+	{
+		n_arr[i++] = '0' + n % 10;
+		n /= 10;
+	}
+	count += i;
 
-    while (n > 0)
-    {
-        n_arr[i++] = '0' + n % 10;
-        n /= 10;
-    }
-
-    count += i;
-
-    while (i > 0)
-    {
-        _putchar(n_arr[--i]);
-    }
-
-    return count;
+	while (i > 0)
+	{
+		_putchar(n_arr[--i]);
+	}
+	return (count);
 }
 
 /**
@@ -40,30 +36,27 @@ int print_unsignedd(unsigned int n)
  */
 int print_octal(unsigned int n)
 {
-    int count = 0;
-    int i = 0;
-    char octal[20];
+	int count = 0;
+	int i = 0;
+	char octal[20];
 
-    if (n == 0)
-    {
-        count += _putchar('0');
-        return count;
-    }
+	if (n == 0)
+	{
+		count += _putchar('0');
+		return (count);
+	}
+	while (n > 0)
+	{
+		octal[i++] = '0' + n % 8;
+		n /= 8;
+	}
+	count += i;
 
-    while (n > 0)
-    {
-        octal[i++] = '0' + n % 8;
-        n /= 8;
-    }
-
-    count += i;
-
-    while (i > 0)
-    {
-        _putchar(octal[--i]);
-    }
-
-    return count;
+	while (i > 0)
+	{
+		_putchar(octal[--i]);
+	}
+	return (count);
 }
 
 /**
@@ -74,35 +67,32 @@ int print_octal(unsigned int n)
  */
 int print_hex(unsigned int n, int uppercase)
 {
-    int count = 0;
-    int i = 0;
-    int digit = 0;
-    char hex[20];
+	int count = 0;
+	int i = 0;
+	int digit = 0;
+	char hex[20];
 
-    if (n == 0)
-    {
-        count += _putchar('0');
-        return count;
-    }
+	if (n == 0)
+	{
+		count += _putchar('0');
+		return (count);
+	}
+	while (n > 0)
+	{
+		digit = n % 16;
+		if (digit < 10)
+			hex[i++] = '0' + digit;
+		else if (uppercase)
+			hex[i++] = 'A' + digit - 10;
+		else
+			hex[i++] = 'a' + digit - 10;
+		n /= 16;
+	}
+	count += i;
 
-    while (n > 0)
-    {
-        digit = n % 16;
-        if (digit < 10)
-            hex[i++] = '0' + digit;
-        else if (uppercase)
-            hex[i++] = 'A' + digit - 10;
-        else
-            hex[i++] = 'a' + digit - 10;
-        n /= 16;
-    }
-
-    count += i;
-
-    while (i > 0)
-    {
-        _putchar(hex[--i]);
-    }
-
-    return count;
+	while (i > 0)
+	{
+		_putchar(hex[--i]);
+	}
+	return (count);
 }
