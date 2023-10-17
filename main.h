@@ -31,7 +31,6 @@ int x_specify(va_list par, int *count);
 int X_specify(va_list par, int *count);
 int S_specify(va_list par, int *count);
 int print_string(const char *str);
-void _putchar(char c);
 
 
 #endif
