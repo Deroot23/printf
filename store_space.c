@@ -26,21 +26,13 @@ int spec(va_list par, const char *fmt, int *i, int *count)
 			return (0);
 	}
 	else if (fmt[*i] == 'r')
-	{
-	return (r_specify(par, count));
-	}
+		return (r_specify(par, count));
 	else if (fmt[*i] == 'b')
-	{
-	return (b_specify(par, count));
-	}
+		return (b_specify(par, count));
 	else if (fmt[*i] == 'u')
-	{
-	return (u_specify(par, count));
-	}
+		return (u_specify(par, count));
 	else if (fmt[*i] == 'o')
-	{
-	return (o_specify(par, count));
-	}
+		return (o_specify(par, count));
 	else if (fmt[*i] == 'x')
 	{
 	return (x_specify(par, count));
