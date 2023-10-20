@@ -1,39 +1,47 @@
 #include "main.h"
+
 /**
  * _specifiers - A function Handles format specifiers of our custom printf.
  * @i: Iterator
  * @par_list: Parameter list
  * @format: Format string
  * @count: Return value tracking
- * Return: return the newspecificier
  */
-int _specifiers(va_list par_list, const char *format, int *i, int *count)
+void _specifiers(va_list par_list, const char *format, int *i, int *count)
 {
-	ops _specifys[] = {
-		{'c', for_c},
-		{'s', for_s},
-		{'p', for_p},
-		{'d', for_d},
-		{'i', for_i},
-		{'X', X_specify},
-		{'x', x_specify},
-		{'b', b_specify},
-		{'o', o_specify},
-		{'u', u_specify},
-		{'S', S_specify},
-		{'r', r_specify},
-		{'\0', NULL},
-	};
+	char parameter, *par_str;
+	int par_int, status;
 
-	char newspecifer = format[*i];
-	int j = 0;
-
-	for (j = 0; _specifys[j].op != '\0'; j++)
-		if (_specifys[j].op == newspecifer)
-			_specifys[j].spc(par_list, count);
-			return (0);
-	if (newspecifer != '%')
+	if (format[*i] == 'c')
+	{
+		parameter = va_arg(par_list, int);
+		(*count) += _putchar(parameter);
+	}
+	else if (format[*i] == 's')
+		par_str = va_arg(par_list, char *);
+		print_null(par_str, count);
+	else if (format[*i] == '%')
 		(*count) += _putchar('%');
-	(*count) += _putchar(newspecifer);
-	return (0);
+	else if (format[*i] == 'd' || format[*i] == 'i')
+	{
+		par_int = va_arg(par_list, int);
+		(*count) += print_number(par_int);
+	}
+	else if (format[*i] == 'p')
+	{
+		void *ptr = va_arg(par_list, void*);
+			(*count) += _putchar('0');
+			(*count) += _putchar('x');
+			(*count) += pnt_ads(ptr);
+	}
+	else
+	{
+		status = spec(par_list, format, i, count);
+		if (status == 0)
+		{
+			(*count) += _putchar('%');
+			(*count) += _putchar(format[*i]);
+		}
+	}
 }
+

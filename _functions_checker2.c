@@ -11,7 +11,7 @@ int X_specify(va_list par, int *count)
 	int par_int = va_arg(par, unsigned int);
 
 	(*count) += print_hex(par_int, 0);
-	return (0);
+	return (1);
 }
 
 /**
@@ -30,7 +30,7 @@ int S_specify(va_list par, int *count)
 	}
 	(*count) += print_string(par_str);
 
-	return (0);
+	return (1);
 }
 /**
  * pnt_ads - a function that handle address
