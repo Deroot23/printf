@@ -9,27 +9,21 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list par_list;
+
 	va_start(par_list, format);
-
-	if (format == NULL)
-		return (-1);
-
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '\0')
-				return (-1);
 			_specifiers(par_list, format, &i, &count);
 		}
 		else
 		{
 			count += _putchar(format[i]);
 		}
-		i++;
 	}
-
 	va_end(par_list);
 	return (count);
 }
+
