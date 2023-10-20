@@ -14,7 +14,6 @@ int r_specify(va_list par, int *count)
 	if (par_str == NULL)
 	{
 		(*count) += _puts("(null)");
-		return (1);
 	}
 	(*count) += _revputs(par_str);
 	return (1);
@@ -45,7 +44,7 @@ int u_specify(va_list par, int *count)
 	unsigned int par_int = va_arg(par, unsigned int);
 
 	(*count) += print_unsignedd(par_int);
-	return (1);
+	return (0);
 }
 
 /**
@@ -59,7 +58,7 @@ int o_specify(va_list par, int *count)
 	int par_int = va_arg(par, unsigned int);
 
 	(*count) += print_octal(par_int);
-	return (1);
+	return (0);
 }
 
 
@@ -73,7 +72,6 @@ int o_specify(va_list par, int *count)
 int x_specify(va_list par, int *count)
 {
 	int par_int = va_arg(par, unsigned int);
-
 	(*count) += print_hex(par_int, 0);
-	return (1);
+	return (0);
 }

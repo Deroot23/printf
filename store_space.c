@@ -34,9 +34,7 @@ int spec(va_list par, const char *fmt, int *i, int *count)
 	else if (fmt[*i] == 'o')
 		return (o_specify(par, count));
 	else if (fmt[*i] == 'x')
-	{
-	return (x_specify(par, count));
-	}
+		return (x_specify(par, count));
 	else if (fmt[*i] == 'X')
 	{
 	return (X_specify(par, count));
