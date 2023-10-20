@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _specifiers - A function Handles format specifiers of our custom printf.
- * @i: Iterator
- * @par_list: Parameter list
- * @format: Format string
- * @count: Return value tracking
- */
+ *  * _specifiers - A function Handles format specifiers of our custom printf.
+ *   * @i: Iterator
+ *    * @par_list: Parameter list
+ *     * @format: Format string
+ *      * @count: Return value tracking
+ *       */
 void _specifiers(va_list par_list, const char *format, int *i, int *count)
 {
 	char parameter, *par_str;
@@ -18,21 +18,18 @@ void _specifiers(va_list par_list, const char *format, int *i, int *count)
 		(*count) += _putchar(parameter);
 	}
 	else if (format[*i] == 's')
+	{
 		par_str = va_arg(par_list, char *);
 		print_null(par_str, count);
+	}
 	else if (format[*i] == '%')
+	{
 		(*count) += _putchar('%');
+	}
 	else if (format[*i] == 'd' || format[*i] == 'i')
 	{
 		par_int = va_arg(par_list, int);
 		(*count) += print_number(par_int);
-	}
-	else if (format[*i] == 'p')
-	{
-		void *ptr = va_arg(par_list, void*);
-			(*count) += _putchar('0');
-			(*count) += _putchar('x');
-			(*count) += pnt_ads(ptr);
 	}
 	else
 	{

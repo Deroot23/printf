@@ -8,14 +8,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, count = 0;
-	va_list par++;
-
-			if (format[i] == '\0')
-				return (-1);
-			_specifiers(par_list, format, &i, &count);
-		}
-		else
-		{_list;
+	va_list par_list;
 
 	va_start(par_list, format);
 
@@ -26,7 +19,13 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i
+			i++;
+			if (format[i] == '\0')
+				return (-1);
+			_specifiers(par_list, format, &i, &count);
+		}
+		else
+		{
 			count += _putchar(format[i]);
 		}
 		i++;
