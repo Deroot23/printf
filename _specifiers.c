@@ -20,6 +20,8 @@ int _specifiers(va_list par_list, const char *format, int *i, int *count)
 		{'b', b_specify},
 		{'o', o_specify},
 		{'u', u_specify},
+		{'S', S_specify},
+		{'r', r_specify},
 		{'\0', NULL},
 	};
 
@@ -27,13 +29,9 @@ int _specifiers(va_list par_list, const char *format, int *i, int *count)
 	int j = 0;
 
 	for (j = 0; _specifys[j].op != '\0'; j++)
-	{
 		if (_specifys[j].op == newspecifer)
-		{
 			_specifys[j].spc(par_list, count);
 			return (0);
-		}
-	}
 	if (newspecifer != '%')
 		(*count) += _putchar('%');
 	(*count) += _putchar(newspecifer);
