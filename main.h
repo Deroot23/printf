@@ -46,15 +46,6 @@ int x_specify(va_list par, int *count);
 int X_specify(va_list par, int *count);
 int S_specify(va_list par, int *count);
 int print_string(const char *str);
-int p_specifieer(va_list par, int *count);
-int pnt_ads(void *ptr);
-int for_c(va_list par_list, int *count);
-int for_s(va_list par_list, int *count);
-int for_percent(va_list par_list, int *count);
-int for_p(va_list par_list, int *count);
-int for_d(va_list par_list, int *count);
-int for_i(va_list par_list, int *count);
-
 
 #endif
 
