@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- *  * _specifiers - A function Handles format specifiers of our custom printf.
- *   * @i: Iterator
- *    * @par_list: Parameter list
- *     * @format: Format string
- *      * @count: Return value tracking
- *       */
+ * _specifiers - A function Handles format specifiers of our custom printf.
+ * @i: Iterator
+ * @par_list: Parameter list
+ * @format: Format string
+ * @count: Return value tracking
+ */
 void _specifiers(va_list par_list, const char *format, int *i, int *count)
 {
 	char parameter, *par_str;
