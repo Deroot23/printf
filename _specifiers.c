@@ -41,4 +41,3 @@ void _specifiers(va_list par_list, const char *format, int *i, int *count)
 		}
 	}
 }
-
